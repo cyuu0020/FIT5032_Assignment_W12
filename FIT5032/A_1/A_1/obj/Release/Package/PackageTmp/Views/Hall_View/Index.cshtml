@@ -1,0 +1,103 @@
+﻿@model IEnumerable<A_1.Models.Hall_View>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hall Index</h2>
+<div id="map" style="height:300px"></div>
+<p>
+    @if (User.IsInRole("Owner"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HallName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            <th>
+                @Html.DisplayNameFor(model => model.createDate)
+            </th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="coordinates">
+                <td>
+                    @Html.DisplayFor(modelItem => item.HallName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rating1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td class="description">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="latitude">
+                    @Html.DisplayFor(modelItem => item.latitude)
+                </td>
+                <td class="longitude">
+                    @Html.DisplayFor(modelItem => item.longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createDate)
+                </td>  
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />

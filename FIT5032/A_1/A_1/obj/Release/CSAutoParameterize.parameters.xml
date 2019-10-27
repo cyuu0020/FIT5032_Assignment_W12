@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;Initial Catalog=aspnet-A_1-20191023022419;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="A_1_Models-Web.config Connection String" description="A_1_Models Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;initial catalog=aspnet-A_1-20191023022419;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='A_1_Models']/@connectionString" />
+  </parameter>
+  <parameter name="User_Role_Models-Web.config Connection String" description="User_Role_Models Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;initial catalog=aspnet-A_1-20191023022419;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='User_Role_Models']/@connectionString" />
+  </parameter>
+  <parameter name="Hall_Rating_Models-Web.config Connection String" description="Hall_Rating_Models Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;initial catalog=aspnet-A_1-20191023022419;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Hall_Rating_Models']/@connectionString" />
+  </parameter>
+  <parameter name="Hall_View-Web.config Connection String" description="Hall_View Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;initial catalog=aspnet-A_1-20191023022419;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Hall_View']/@connectionString" />
+  </parameter>
+  <parameter name="Hall_View_Models-Web.config Connection String" description="Hall_View_Models Connection String used in web.config by the application to access the database." defaultValue="data source=(LocalDb)\MSSQLLocalDB;attachdbfilename=|DataDirectory|\aspnet-A_1-20191023022419.mdf;initial catalog=aspnet-A_1-20191023022419;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\17902\\source\\repos\\FIT5032_Assignment_W12\\A_1\\A_1\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Hall_View_Models']/@connectionString" />
+  </parameter>
+</parameters>

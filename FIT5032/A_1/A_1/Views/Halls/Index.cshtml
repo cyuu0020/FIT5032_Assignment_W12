@@ -1,0 +1,114 @@
+﻿@model IEnumerable<A_1.Models.Hall>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Hall Index</h2>
+<div id="map" style="height:300px"></div>
+<p>
+    @if (User.IsInRole("Owner"))
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HallName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AspNetUsers.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="coordinates">
+                <td>
+                    @Html.DisplayFor(modelItem => item.HallName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td class="description">
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td class="latitude">
+                    @Html.DisplayFor(modelItem => item.latitude)
+                </td>
+                <td class="longitude">
+                    @Html.DisplayFor(modelItem => item.longitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AspNetUsers.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.createDate)
+                </td>
+                @if (User.IsInRole("Administrator") || User.IsInRole("Owner") )
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+} 
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+ 
